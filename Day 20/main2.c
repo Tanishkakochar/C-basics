@@ -1,17 +1,17 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    int n, digit, product = 1;
-    scanf("%d", &n);
+    char bin[100];
+    scanf("%s", bin);
 
-    while(n > 0) {
-        digit = n % 10;
-        if(digit % 2 == 1) {
-            product *= digit;
-        }
-        n /= 10;
+    for(int i = 0; i < strlen(bin); i++) {
+        if(bin[i] == '0')
+            bin[i] = '1';
+        else if(bin[i] == '1')
+            bin[i] = '0';
     }
 
-    printf("%d\n", product);
+    printf("%s\n", bin);
     return 0;
 }
